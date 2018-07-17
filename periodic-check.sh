@@ -76,14 +76,14 @@ fi
 index=0
 while true
 do
-  result=`$command`
+  result=$(command)
   echo "date: $date: count: $count, index: $index, result: $result, expect: $expect"
   if [ $index -ge $count ]; then
     die "reach max count $count"
   fi
   if [ "$result" = "$expect" ]; then
-    success "$command: success updated image: $expect" 
+    success "$command: successfully meet expect result: $expect" 
   fi 
   index=$((index+1))
-  sleep 2
+  sleep ${interval}
 done
